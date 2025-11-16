@@ -256,56 +256,81 @@ nav#nav-menu .cta {
 
 /* FULLSCREEN MOBILE MENU */
 
+/* ===============================
+   TOP-DOWN MOBILE MENU (Like CBPhysio)
+   =============================== */
+
 @media (max-width: 1024px) {
 
-  /* hide desktop nav */
+  /* Hide desktop nav */
   nav#nav-menu {
-    display: none;
+      display: none;
   }
 
-  /* FULL SCREEN DRAWER MENU */
+  /* Top dropdown menu (NOT fullscreen) */
   nav#nav-menu.show {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    background: var(--brand-dark);
-    padding: 90px 30px 40px;
-    z-index: 2000;
-    animation: slideIn 0.35s ease forwards;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 74px;                      /* sits under header */
+      left: 0;
+      width: 100%;
+      background: var(--brand-dark);
+      padding: 24px 22px 40px;
+      z-index: 999;
+      border-bottom-left-radius: 14px;
+      border-bottom-right-radius: 14px;
+
+      /* nice slide down animation */
+      animation: slideDown .28s ease-out forwards;
   }
 
-  /* menu links */
   nav#nav-menu.show a {
-    color: #fff;
-    padding: 18px 0;
-    font-size: 1.4rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: #fff;
+      padding: 18px 0;
+      font-size: 1.25rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
   }
 
-  /* CTA inside menu */
+  /* CTA inside mobile menu */
   nav#nav-menu.show a.cta {
-    padding: 16px 22px;
-    margin-top: 30px;
-    background: var(--brand-accent);
-    color: var(--brand-dark);
-    font-size: 1.2rem;
-    border-radius: 12px;
+      background: var(--brand-accent);
+      color: var(--brand-dark);
+      padding: 12px 22px;
+      margin-top: 20px;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      display: inline-block;
+      width: fit-content;
   }
 
+  /* slide down animation */
+  @keyframes slideDown {
+      from { 
+        opacity: 0;
+        transform: translateY(-12px);
+      }
+      to { 
+        opacity: 1;
+        transform: translateY(0);
+      }
+  }
 }
 
-/* slide animation */
-@keyframes slideIn {
-  from { transform: translateX(100%); }
-  to   { transform: translateX(0); }
+/* Menue Close Button */
+.menu-close-btn {
+  font-size: 1.7rem;
+  color: var(--brand-dark);
+  position: absolute;
+  right: 18px;
+  top: 20px;
+  cursor: pointer;
+  z-index: 1200;
 }
 
-
+.menu-close-btn.hidden {
+  display: none;
+}
 
 
 /* ---------- Hero ---------- */

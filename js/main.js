@@ -1,6 +1,7 @@
 // =====================================================
-// Tahirah PhysioCare — Optimized main.js (v2.0)
-// Faster, safer, unified animations & interactions
+// Tahirah PhysioCare — Clean & Optimized main.js (v3.0)
+// All bugs fixed: scrolling lag, double hamburger logic,
+// click conflicts, animation conflicts.
 // =====================================================
 
 (function () {
@@ -13,41 +14,55 @@
   const $$ = (s) => Array.from(document.querySelectorAll(s));
 
   // =====================================================
-  // 1) HAMBURGER MENU — improved
+  // 1) CLEAN HAMBURGER MENU — dropdown only (no fullscreen)
   // =====================================================
   document.addEventListener("DOMContentLoaded", () => {
+
     const hamburger = $("#hamburger");
     const navMenu = $("#nav-menu");
+    const closeBtn = $("#menuCloseBtn");
 
-    if (!hamburger || !navMenu) return;
+    if (!hamburger || !navMenu || !closeBtn) return;
 
-    // Toggle
+    // OPEN dropdown
     hamburger.addEventListener("click", (e) => {
       e.stopPropagation();
-      navMenu.classList.toggle("show");
-      hamburger.classList.toggle("active");
+      navMenu.classList.add("show");
+      closeBtn.classList.remove("hidden");
+      hamburger.classList.add("active");
     });
 
-    // Close when clicking ANY link inside nav
+    // CLOSE dropdown
+    closeBtn.addEventListener("click", () => {
+      navMenu.classList.remove("show");
+      closeBtn.classList.add("hidden");
+      hamburger.classList.remove("active");
+    });
+
+    // Close when clicking any menu link
     navMenu.addEventListener("click", (e) => {
       if (e.target.tagName === "A") {
         navMenu.classList.remove("show");
+        closeBtn.classList.add("hidden");
         hamburger.classList.remove("active");
       }
     });
 
-    // Close when clicking outside
+    // Close if clicking OUTSIDE menu
     document.addEventListener("click", (e) => {
       if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
         navMenu.classList.remove("show");
+        closeBtn.classList.add("hidden");
         hamburger.classList.remove("active");
       }
     });
+
   });
 
   // =====================================================
-  // 2) TESTIMONIAL SLIDER — optimized + CPU safe
+  // 2) TESTIMONIAL SLIDER — optimised & smooth
   // =====================================================
+
   const track = $(".slider-track");
   const slides = $$(".slide");
   const dotsContainer = $(".slider-dots");
@@ -84,7 +99,7 @@
       clearInterval(autoSlide);
     }
 
-    // Stop slider when tab inactive — CPU saving
+    // CPU saver when tab inactive
     document.addEventListener("visibilitychange", () => {
       document.hidden ? stopSlider() : startSlider();
     });
@@ -93,8 +108,9 @@
   }
 
   // =====================================================
-  // 3) GALLERY LIGHTBOX — upgraded
+  // 3) GALLERY LIGHTBOX — stable & smooth
   // =====================================================
+
   const galleryImgs = $$(".gallery-grid img");
   const lightbox = $("#lightbox");
   const lightboxImg = $("#lightbox-img");
@@ -112,20 +128,19 @@
       lightbox.classList.remove("open")
     );
 
-    // Close on outside click
     lightbox.addEventListener("click", (e) => {
       if (e.target === lightbox) lightbox.classList.remove("open");
     });
 
-    // Close on ESC
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") lightbox.classList.remove("open");
     });
   }
 
   // =====================================================
-  // 4) UNIFIED FAQ ACCORDION (smooth + safe)
+  // 4) FAQ ACCORDION — smooth height animation
   // =====================================================
+
   const faqItems = $$(".faq-item");
 
   if (faqItems.length) {
@@ -159,8 +174,9 @@
   }
 
   // =====================================================
-  // 5) Lazy-load GSAP only if animations enabled
+  // 5) Lazy-load GSAP ONLY if animations allowed
   // =====================================================
+
   if (prefersReducedMotion) return;
 
   function loadGSAP() {
@@ -168,12 +184,10 @@
       if (window.gsap) return resolve(window.gsap);
 
       const core = document.createElement("script");
-      core.src =
-        "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js";
+      core.src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js";
 
       const trig = document.createElement("script");
-      trig.src =
-        "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js";
+      trig.src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js";
 
       core.onload = () => {
         trig.onload = () => resolve(window.gsap);
@@ -185,43 +199,38 @@
   }
 
   // =====================================================
-  // 6) GSAP ANIMATIONS — smoother + optimized
+  // 6) GSAP Animations — safe, smooth, lightweight
   // =====================================================
+
   loadGSAP().then((gsap) => {
     gsap.registerPlugin(window.ScrollTrigger);
 
-    // Header fade-in
-    const header = $(".header");
-    if (header)
-      gsap.from(header, {
-        opacity: 0,
-        y: -20,
-        duration: 0.6,
-        ease: "power2.out",
-      });
+    // Header
+    gsap.from(".header", {
+      opacity: 0,
+      y: -20,
+      duration: 0.6,
+      ease: "power2.out",
+    });
 
-    // Hero
-    const heroLeft = $(".hero-left");
-    const heroImg = $(".hero-right img");
+    // Hero content
+    gsap.from(".hero-left > *", {
+      opacity: 0,
+      y: 25,
+      stagger: 0.1,
+      duration: 0.7,
+      ease: "power3.out",
+    });
 
-    if (heroLeft)
-      gsap.from(heroLeft.children, {
-        opacity: 0,
-        y: 25,
-        stagger: 0.1,
-        duration: 0.7,
-        ease: "power3.out",
-      });
+    // Hero image
+    gsap.from(".hero-right img", {
+      opacity: 0,
+      scale: 0.95,
+      duration: 0.75,
+      ease: "power3.out",
+    });
 
-    if (heroImg)
-      gsap.from(heroImg, {
-        opacity: 0,
-        scale: 0.95,
-        duration: 0.75,
-        ease: "power3.out",
-      });
-
-    // Reveal sections
+    // Section reveals
     $$(".section-title, .treatment-card, .contact-card, .slide").forEach(
       (el) => {
         gsap.from(el, {
@@ -237,7 +246,7 @@
       }
     );
 
-    // Hover pop for treatment cards
+    // Treatment hover pop
     $$(".treatment-card").forEach((card) => {
       card.addEventListener("mouseenter", () =>
         gsap.to(card, { scale: 1.04, duration: 0.2 })
@@ -247,37 +256,16 @@
       );
     });
 
-    // Floating WhatsApp animation
-    const wa = $(".whatsapp-btn");
-    if (wa) {
-      gsap.to(wa, {
-        y: -6,
-        duration: 1.5,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-    }
-
-    // Footer animation
-    const footer = $("footer");
-    if (footer)
-      gsap.from(footer, {
-        opacity: 0,
-        y: 20,
-        duration: 0.7,
-        scrollTrigger: {
-          trigger: footer,
-          start: "top 95%",
-        },
-      });
+    // Footer
+    gsap.from("footer", {
+      opacity: 0,
+      y: 20,
+      duration: 0.7,
+      scrollTrigger: {
+        trigger: "footer",
+        start: "top 95%",
+      },
+    });
   });
 
 })();
-
-const closeMenu = document.querySelector(".menu-close-btn");
-
-closeMenu.addEventListener("click", () => {
-    navMenu.classList.remove("show");
-    hamburger.classList.remove("active");
-});
