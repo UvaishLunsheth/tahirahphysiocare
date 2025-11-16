@@ -274,3 +274,10 @@
   });
 
 })();
+
+const closeMenu = document.querySelector(".menu-close-btn");
+
+closeMenu.addEventListener("click", () => {
+    navMenu.classList.remove("show");
+    hamburger.classList.remove("active");
+});

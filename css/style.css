@@ -26,10 +26,14 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
+html, body {
+  box-sizing: border-box;
+  overflow-x: hidden; /* stops accidental horizontal scroll */
+  width: 100%;
 }
+
+/* Make every element use border-box (safer sizing) */
+*, *::before, *::after { box-sizing: inherit; }
 
 body {
   margin: 0;
@@ -81,27 +85,37 @@ button {
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 12px;
   justify-content: space-between;
   padding: 12px var(--container-pad);
+  
 }
 
 /* Logo area - clearly separated from content images */
 .logo-container {
   display: flex;
-  gap: 3px;
+  gap: 10px;
   align-items: center;
   min-width: 0;
 }
 
 .brand-logo {
-  width: 62px;
+  width: 44px;
   /* Increased from 48px → looks clean & readable */
   height: auto;
   object-fit: contain;
   display: block;
 }
 
+/* Brand text small to prevent header overflow */
+.logo-container h1 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .brand-title {
   font-size: 1.25rem;
   font-weight: var(--fw-semibold);
@@ -127,17 +141,18 @@ button {
 /* Desktop nav */
 nav#nav-menu {
   display: flex;
-  gap: 22px;
+  gap: 18px;
   align-items: center;
   margin-left: auto;
   white-space: nowrap;
+  min-width: 0; /* allow nav to shrink on small screens */
 }
 
 nav#nav-menu a {
-  padding: 4px 2px;
-  font-weight: var(--fw-regular);
-  color: var(--brand-dark);
-  transition: color var(--transition);
+  display: inline-block;
+  padding: 6px 8px;
+  color: inherit;
+  text-decoration: none;
 }
 
 nav#nav-menu a:hover,
@@ -153,21 +168,21 @@ nav#nav-menu .cta {
   gap: 8px;
   background: var(--brand-dark);
   color: var(--white);
-  padding: 8px 14px;
-  border-radius: 10px;
-  font-weight: var(--fw-semibold);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
   box-shadow: 0 6px 18px rgba(19, 61, 63, 0.08);
-  max-width: 180px;
+  max-width: 160px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* ---------- Hamburger (mobile) ---------- */
+/* ---------- Hamburger (mobile only) ---------- */
 .hamburger {
   display: none;
-  width: 38px;
-  height: 30px;
+  width: 34px;
+  height: 28px;
   border: none;
   background: transparent;
   padding: 0;
@@ -185,53 +200,113 @@ nav#nav-menu .cta {
   transition: var(--transition);
 }
 
+/* Show hamburger ONLY on mobile */
 @media (max-width: 1024px) {
   .hamburger {
     display: flex;
   }
+
+  /* Hide desktop nav */
+  nav#nav-menu {
+    display: none;
+  }
+
+  /* Fullscreen menu drawer */
+  nav#nav-menu.show {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--brand-dark);
+    padding: 90px 30px 40px;
+    z-index: 2000;
+    animation: slideIn 0.35s ease forwards;
+  }
+
+  nav#nav-menu.show a {
+    color: #fff;
+    padding: 18px 0;
+    font-size: 1.4rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  nav#nav-menu.show a.cta {
+    padding: 16px 22px;
+    margin-top: 30px;
+    background: var(--brand-accent);
+    color: var(--brand-dark);
+    font-size: 1.2rem;
+    border-radius: 12px;
+  }
 }
 
+/* Hamburger animation (cross icon) */
 .hamburger.active span:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
 }
-
 .hamburger.active span:nth-child(2) {
   opacity: 0;
-  transform: scaleX(0);
 }
-
 .hamburger.active span:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
 }
 
-/* nav show (toggled by JS on smaller screens) */
-nav#nav-menu.show {
-  display: flex;
-  position: absolute;
-  top: 72px;
-  right: 12px;
-  background: var(--brand-dark);
-  color: #fff;
-  padding: 10px;
-  border-radius: 10px;
-  flex-direction: column;
-  gap: 0;
-  min-width: 220px;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+/* FULLSCREEN MOBILE MENU */
+
+@media (max-width: 1024px) {
+
+  /* hide desktop nav */
+  nav#nav-menu {
+    display: none;
+  }
+
+  /* FULL SCREEN DRAWER MENU */
+  nav#nav-menu.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--brand-dark);
+    padding: 90px 30px 40px;
+    z-index: 2000;
+    animation: slideIn 0.35s ease forwards;
+  }
+
+  /* menu links */
+  nav#nav-menu.show a {
+    color: #fff;
+    padding: 18px 0;
+    font-size: 1.4rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* CTA inside menu */
+  nav#nav-menu.show a.cta {
+    padding: 16px 22px;
+    margin-top: 30px;
+    background: var(--brand-accent);
+    color: var(--brand-dark);
+    font-size: 1.2rem;
+    border-radius: 12px;
+  }
+
 }
 
-nav#nav-menu.show a {
-  color: #fff;
-  padding: 12px 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+/* slide animation */
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
 }
 
-nav#nav-menu.show a.cta {
-  background: var(--brand-accent);
-  color: var(--brand-dark);
-  margin: 10px 12px;
-  border-radius: 8px;
-}
+
+
 
 /* ---------- Hero ---------- */
 .hero {
@@ -280,6 +355,21 @@ nav#nav-menu.show a.cta {
 }
 
 .btn-primary:hover {
+  transform: translateY(-3px);
+  background: var(--brand-dark);
+}
+
+.therapies-btn {
+  background: var(--brand-dark);
+  color: var(--white);
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: var(--fw-semibold);
+  display: inline-block;
+  transition: transform var(--transition);
+}
+
+.therapies-btn:hover {
   transform: translateY(-3px);
   background: var(--brand-dark);
 }
@@ -637,6 +727,7 @@ footer img {
 
 /* ---------- Responsive breakpoints ---------- */
 /* Tablet: hide desktop nav, show hamburger; mobile layout adjustments */
+
 @media (max-width:1024px) {
   nav#nav-menu {
     display: none;
@@ -1379,24 +1470,4 @@ nav#nav-menu .cta {
   cursor: pointer;
 }
 
-/* FORCE hamburger to stack vertically */
-.hamburger {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 6px !important;
-    width: 38px !important;
-    height: 30px !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border: none !important;
-}
 
-.hamburger span {
-    display: block !important;
-    width: 100% !important;
-    height: 3px !important;
-    background: var(--brand-dark) !important;
-    border-radius: 2px !important;
-}
