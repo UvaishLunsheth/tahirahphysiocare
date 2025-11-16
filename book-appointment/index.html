@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary SEO -->
+  <title>Book Appointment | Tahirah PhysioCare</title>
+  <meta name="description"
+    content="Book your physiotherapy appointment at Tahirah PhysioCare, Bharuch. Back pain, fractures, sports injuries, stroke rehab, post-operative care and more.">
+  <link rel="canonical" href="https://tahirahphysiotherapy.com/book-appointment/">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Book Appointment | Tahirah PhysioCare">
+  <meta property="og:description"
+    content="Schedule your physiotherapy appointment at our Bharuch clinics. Expert care for pain relief, injury rehab and recovery.">
+  <meta property="og:image" content="https://tahirahphysiotherapy.com/images/hero-right-1600.webp">
+  <meta property="og:url" content="https://tahirahphysiotherapy.com/book-appointment/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Faster Loading -->
+  <link rel="preload" as="image" href="/images/hero-right-800.webp">
+
+  <!-- JSON-LD Schema (LocalBusiness + Booking) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Tahirah PhysioCare Appointment Booking",
+    "url": "https://tahirahphysiotherapy.com/book-appointment/",
+    "logo": "https://tahirahphysiotherapy.com/images/logo-800.webp",
+    "image": "https://tahirahphysiotherapy.com/images/hero-right-1600.webp",
+    "description": "Book your physiotherapy appointment online at Tahirah PhysioCare — Bharuch.",
+    "telephone": "+91 78747 39574",
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Beside Munaf's Bungalows",
+        "addressLocality": "Bharuch",
+        "addressRegion": "Gujarat",
+        "postalCode": "392230",
+        "addressCountry": "IN"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Ajay-Vijay Complex",
+        "addressLocality": "Bharuch",
+        "addressRegion": "Gujarat",
+        "postalCode": "392035",
+        "addressCountry": "IN"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-container">
+      <a href="/">
+        <img src="/images/logo-800.webp" width="55" alt="Tahirah PhysioCare">
+      </a>
+      <h1>Tahirah <span>PhysioCare</span></h1>
+    </div>
+
+    <nav id="nav-menu">
+      <a href="/">Home</a>
+      <a href="/therapies/" class="active">Therapies</a>
+      <a href="/services/">Services</a>
+      <a href="/gallery/">Gallery</a>
+      <a href="/contact/">Contact</a>
+      <a href="/book-appointment/" class="cta">Book Now</a>
+    </nav>
+
+    <button id="hamburger" class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> ›
+    <span aria-current="page">Book Appointment</span>
+  </nav>
+
+  <!-- PAGE TITLE -->
+  <section class="page-header center">
+    <h2 class="section-title">Book an Appointment</h2>
+    <p class="lead">
+      Fill in your details and our physiotherapist will call you to confirm your appointment.
+    </p>
+  </section>
+
+  <!-- FORM SECTION -->
+  <section class="appointment-section container">
+
+    <form id="appointment-form" class="appointment-form modern-form" novalidate>
+
+      <label class="form-field">
+        <span>Full Name</span>
+        <input type="text" name="name" id="name" required aria-label="Your Full Name">
+      </label>
+
+      <label class="form-field">
+        <span>Email Address</span>
+        <input type="email" name="email" id="email" placeholder="example@gmail.com"
+               required aria-label="Your Email Address">
+      </label>
+
+      <label class="form-field">
+        <span>Phone Number</span>
+        <input type="tel" name="phone" id="phone"
+               pattern="[0-9]{10}" maxlength="10" required aria-label="Your Phone Number">
+      </label>
+
+      <label class="form-field">
+        <span>Preferred Date</span>
+        <input type="date" name="date" id="date" required aria-label="Select Appointment Date">
+      </label>
+
+      <label class="form-field">
+        <span>Choose Your Service</span>
+        <select name="service" id="service" required aria-label="Select Physiotherapy Service">
+          <option disabled selected value="">Select a service</option>
+          <option>Back Pain Management</option>
+          <option>Fracture Rehabilitation</option>
+          <option>Post-Operative Care</option>
+          <option>Sports Injury Rehabilitation</option>
+          <option>Paralysis & Stroke Care</option>
+        </select>
+      </label>
+
+      <button type="submit" class="btn-primary glow-btn" style="width:100%;">
+        Book Appointment
+      </button>
+
+      <div id="form-result" class="form-result" aria-live="polite"></div>
+
+    </form>
+
+  </section>
+
+  <section class="quick-help">
+  <h3>Need Quick Help?</h3>
+  <p>If you need fast assistance or want to talk directly, contact us:</p>
+
+  <div class="quick-help-buttons">
+    <a href="tel:+917874739574" class="qh-btn call">📞 Call Now</a>
+    <a href="https://wa.me/917874739574" class="qh-btn whatsapp" target="_blank">💬 WhatsApp Us</a>
+  </div>
+</section>
+
+   <!-- floating dual widget (keeps same widget across site) -->
+  <div class="contact-widget" role="region" aria-label="Contact quick actions">
+    <a class="cw-btn" href="tel:+917874739574" aria-label="Call Tahirah PhysioCare">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path
+          d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 01.9-.27c1 .2 2 .3 3 .3a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 21.5 2.5 13.93 2.5 4a1 1 0 011-1H7a1 1 0 011 1c0 1 .1 2 .3 3a1 1 0 01-.27.9l-2.2 2.19z" />
+      </svg>
+    </a>
+
+    <a class="cw-btn" href="https://wa.me/917874739574" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path
+          d="M20.52 3.48A11.87 11.87 0 0012 0C5.37 0 .03 5.34.03 12.03a11.85 11.85 0 001.63 5.9L0 24l6.36-1.66a11.93 11.93 0 005.64 1.44c6.63 0 11.97-5.35 11.97-12.03 0-3.2-1.25-6.2-3.45-8.11zM12 21.6a9.4 9.4 0 01-4.8-1.32l-.34-.2L4 20l1.3-2.78-.22-.36A9.4 9.4 0 012.6 12.07 9.4 9.4 0 1112 21.6zm5.02-7.93c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.62.14s-.71.88-.87 1.07c-.16.18-.32.21-.59.07-.27-.13-1.14-.42-2.17-1.33-.8-.71-1.34-1.58-1.5-1.84-.16-.26-.02-.4.12-.54.12-.12.27-.32.4-.48.13-.16.17-.27.27-.45.09-.18.05-.34-.02-.47-.07-.13-.62-1.5-.85-2.06-.22-.53-.45-.46-.62-.47l-.53-.01c-.18 0-.47.07-.72.34-.25.27-.96.94-.96 2.3 0 1.37.99 2.69 1.12 2.88.13.18 1.94 3.02 4.7 4.23 2.77 1.22 2.77.81 3.27.76.5-.05 1.6-.64 1.82-1.26.22-.63.22-1.17.15-1.28-.07-.12-.25-.18-.53-.32z" />
+      </svg>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="/images/logo-800.webp" width="85" alt="Tahirah PhysioCare">
+    <p>Move Freely. Heal Naturally.</p>
+    <p>📞 <a href="tel:+917874739574">+91 78747 39574</a> | ✉️ info@tahirahphysiotherapy.com</p>
+    <p>© <span id="copy-year">2025</span> Tahirah PhysioCare</p>
+  </footer>
+
+
+
+  <!-- JAVASCRIPT -->
+  <script src="/js/main.js" defer></script>
+
+  <!-- Handle Prefill From Query ?therapy= -->
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const therapy = params.get("therapy");
+
+    if (therapy) {
+      const select = document.getElementById("service");
+      [...select.options].forEach(opt => {
+        if (opt.text === therapy) opt.selected = true;
+      });
+    }
+
+    // Set minimum date = today
+    document.getElementById("date").setAttribute("min", new Date().toISOString().split("T")[0]);
+
+    // Google Apps Script Handler
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbxfNAsqJLnrfqQ6w9HzwDzx6EERG5gB3V1uZ6kK2vdpVdgjx6Oz76b3urb2Wkz50Gk7/exec";
+
+    document.getElementById("appointment-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const fd = new FormData(e.target);
+
+      try {
+        await fetch(scriptURL, { method: "POST", mode: "no-cors", body: fd });
+        document.getElementById("form-result").textContent =
+          "✅ Appointment booked successfully! We will contact you shortly.";
+        e.target.reset();
+      } catch (err) {
+        document.getElementById("form-result").textContent =
+          "❌ Error submitting form. Please try again.";
+      }
+    });
+  </script>
+
+</body>
+</html>

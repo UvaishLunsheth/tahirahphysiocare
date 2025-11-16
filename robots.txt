@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Block sensitive system folders (not needed by crawlers)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /drafts/
+
+# Allow essential assets
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Sitemap
+Sitemap: https://tahirahphysiotherapy.com/sitemap.xml

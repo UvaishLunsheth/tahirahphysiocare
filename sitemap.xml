@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://tahirahphysiotherapy.com/</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Services Main Page -->
+  <url>
+    <loc>https://tahirahphysiotherapy.com/services/</loc>
+    <priority>0.95</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Individual Services -->
+  <url>
+    <loc>https://tahirahphysiotherapy.com/services/back-pain-management/</loc>
+    <priority>0.90</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://tahirahphysiotherapy.com/services/fracture-rehabilitation/</loc>
+    <priority>0.90</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://tahirahphysiotherapy.com/services/post-operative-care/</loc>
+    <priority>0.90</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://tahirahphysiotherapy.com/services/sports-injury-rehab/</loc>
+    <priority>0.90</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://tahirahphysiotherapy.com/services/paralysis-stroke-care/</loc>
+    <priority>0.90</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Gallery -->
+  <url>
+    <loc>https://tahirahphysiotherapy.com/gallery/</loc>
+    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://tahirahphysiotherapy.com/contact/</loc>
+    <priority>0.80</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <!-- Appointment -->
+  <url>
+    <loc>https://tahirahphysiotherapy.com/book-appointment/</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+</urlset>

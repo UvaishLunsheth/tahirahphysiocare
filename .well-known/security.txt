@@ -1,0 +1,11 @@
+# security.txt for Tahirah PhysioCare
+# Standard: https://securitytxt.org/
+
+Contact: mailto:info@tahirahphysiotherapy.com
+Contact: tel:+917874739574
+
+Expires: 2026-01-01T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://tahirahphysiotherapy.com/.well-known/security.txt
+Policy: https://tahirahphysiotherapy.com/security-policy
+Hiring: https://tahirahphysiotherapy.com/careers
