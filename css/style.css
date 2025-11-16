@@ -55,6 +55,8 @@ button{ font-family:inherit; }
   padding:12px var(--container-pad);
   justify-content:space-between;
   padding: 1px var(--container-pad);
+  top: 0;
+  z-index: 999;
 }
 
 /* Logo area - clearly separated from content images */
@@ -103,10 +105,10 @@ nav#nav-menu .cta{
 
 /* ---------- Hamburger (mobile) ---------- */
 .hamburger{
-  display:none; align-items:center; justify-content:center; width:44px; height:44px; border-radius:10px;
+  display:none; align-items:center; justify-content:center; width:32px; height:24px; border-radius:10px;
   background:transparent; border:none; cursor:pointer;
 }
-.hamburger span{ display:block; width:22px; height:2.5px; background:var(--brand-dark); border-radius:2px; transition:var(--transition); }
+.hamburger span{ display:block; width:100%; height:3px; background:var(--brand-dark); border-radius:2px; transition:var(--transition); }
 .hamburger.active span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
 .hamburger.active span:nth-child(2){ opacity:0; transform:scaleX(0); }
 .hamburger.active span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
