@@ -375,13 +375,31 @@ nav#nav-menu .cta {
 }
 
 .btn-outline {
-  padding: 11px 18px;
+  padding: 12px 20px;
   border-radius: 10px;
   border: 2px solid var(--brand-dark);
   color: var(--brand-dark);
   font-weight: var(--fw-semibold);
 }
 
+@media (max-width: 760px) {
+  .btn-primary,
+  .therapies-btn {
+    width: auto;                /* prevent full-width stretching */
+    padding: 12px 22px;         /* same padding */
+    font-size: 1rem;            /* same text size */
+    border-radius: 12px;        /* identical rounded corners */
+    text-align: center;
+    display: inline-block;
+    margin: 6px auto;           /* equal spacing */
+  }
+
+  .hero-btns {
+    justify-content: center;    /* center both buttons evenly */
+    gap: 12px;                  /* consistent spacing */
+    width: 100%;
+  }
+}
 /* hero image */
 .hero-right {
   flex: 0 0 48%;
