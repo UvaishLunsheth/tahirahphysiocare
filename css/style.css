@@ -178,158 +178,54 @@ nav#nav-menu .cta {
   text-overflow: ellipsis;
 }
 
-/* ---------- Hamburger (mobile only) ---------- */
-.hamburger {
-  display: none;
-  width: 34px;
-  height: 28px;
-  border: none;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: center;
-  gap: 6px;
+/* ---------- Hamburger (mobile) ---------- */
+.hamburger{
+  display:none;
+  width:38px;height:30px;border:none;background:transparent;padding:0;
+  cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:6px;
 }
+.hamburger span{display:block;width:100%;height:3px;border-radius:2px;background:var(--brand-dark);transition:var(--transition)}
+/* active -> X */
+.hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-.hamburger span {
-  width: 100%;
-  height: 3px;
-  background: var(--brand-dark);
-  border-radius: 2px;
-  transition: var(--transition);
-}
+/* ---------- Mobile menu (top dropdown, not fullscreen) ---------- */
+@media (max-width: 1024px){
+  nav#nav-menu{display:none} /* hide desktop nav */
 
-/* Show hamburger ONLY on mobile */
-@media (max-width: 1024px) {
-  .hamburger {
-    display: flex;
+  .hamburger{display:flex}
+
+  /* Top dropdown (under header) */
+  nav#nav-menu.show{
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    top: calc(100% + 0px); /* directly under header */
+    left:0;
+    right:0;
+    width:100%;
+    max-height: calc(100vh - 72px); /* leaves room at top */
+    background:var(--brand-dark);
+    color:#fff;
+    padding:18px 20px;
+    overflow:auto;
+    -webkit-overflow-scrolling:touch; /* smooth native touch scrolling */
+    border-bottom-left-radius:14px;
+    border-bottom-right-radius:14px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+    z-index:1205;
+    transform-origin:top center;
+    animation: slideDown .28s ease-out;
   }
 
-  /* Hide desktop nav */
-  nav#nav-menu {
-    display: none;
-  }
+  nav#nav-menu.show a{color:#fff;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:1.05rem}
+  nav#nav-menu.show a.cta{background:var(--brand-accent);color:var(--brand-dark);padding:12px 18px;border-radius:10px;margin-top:8px;display:inline-block}
 
-  /* Fullscreen menu drawer */
-  nav#nav-menu.show {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    background: var(--brand-dark);
-    padding: 90px 30px 40px;
-    z-index: 2000;
-    animation: slideIn 0.35s ease forwards;
-  }
-
-  nav#nav-menu.show a {
-    color: #fff;
-    padding: 18px 0;
-    font-size: 1.4rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-
-  nav#nav-menu.show a.cta {
-    padding: 16px 22px;
-    margin-top: 30px;
-    background: var(--brand-accent);
-    color: var(--brand-dark);
-    font-size: 1.2rem;
-    border-radius: 12px;
-  }
-}
-
-/* Hamburger animation (cross icon) */
-.hamburger.active span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
-/* FULLSCREEN MOBILE MENU */
-
-/* ===============================
-   TOP-DOWN MOBILE MENU (Like CBPhysio)
-   =============================== */
-
-@media (max-width: 1024px) {
-
-  /* Hide desktop nav */
-  nav#nav-menu {
-      display: none;
-  }
-
-  /* Top dropdown menu (NOT fullscreen) */
-  nav#nav-menu.show {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 74px;                      /* sits under header */
-      left: 0;
-      width: 100%;
-      background: var(--brand-dark);
-      padding: 24px 22px 40px;
-      z-index: 999;
-      border-bottom-left-radius: 14px;
-      border-bottom-right-radius: 14px;
-
-      /* nice slide down animation */
-      animation: slideDown .28s ease-out forwards;
-  }
-
-  nav#nav-menu.show a {
-      color: #fff;
-      padding: 18px 0;
-      font-size: 1.25rem;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-
-  /* CTA inside mobile menu */
-  nav#nav-menu.show a.cta {
-      background: var(--brand-accent);
-      color: var(--brand-dark);
-      padding: 12px 22px;
-      margin-top: 20px;
-      border-radius: 12px;
-      font-size: 1.1rem;
-      display: inline-block;
-      width: fit-content;
-  }
-
-  /* slide down animation */
   @keyframes slideDown {
-      from { 
-        opacity: 0;
-        transform: translateY(-12px);
-      }
-      to { 
-        opacity: 1;
-        transform: translateY(0);
-      }
+    from{opacity:0; transform:translateY(-8px)}
+    to{opacity:1; transform:translateY(0)}
   }
-}
-
-/* Menue Close Button */
-.menu-close-btn {
-  font-size: 1.7rem;
-  color: var(--brand-dark);
-  position: absolute;
-  right: 18px;
-  top: 20px;
-  cursor: pointer;
-  z-index: 1200;
-}
-
-.menu-close-btn.hidden {
-  display: none;
 }
 
 
