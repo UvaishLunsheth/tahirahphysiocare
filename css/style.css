@@ -26,14 +26,20 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   box-sizing: border-box;
-  overflow-x: hidden; /* stops accidental horizontal scroll */
+  overflow-x: hidden;
+  /* stops accidental horizontal scroll */
   width: 100%;
 }
 
 /* Make every element use border-box (safer sizing) */
-*, *::before, *::after { box-sizing: inherit; }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
 body {
   margin: 0;
@@ -83,12 +89,13 @@ button {
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+
   display: flex;
   align-items: center;
-  gap: 12px;
   justify-content: space-between;
-  padding: 12px var(--container-pad);
-  
+
+  padding: 6px 4%;
+  height: 90px;           /* <-- FIXED HEIGHT */
 }
 
 /* Logo area - clearly separated from content images */
@@ -116,6 +123,7 @@ button {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .brand-title {
   font-size: 1.25rem;
   font-weight: var(--fw-semibold);
@@ -127,7 +135,7 @@ button {
 }
 
 .logo-container img {
-  width: 120px;
+  width: 105px;
   height: auto;
 }
 
@@ -145,7 +153,8 @@ nav#nav-menu {
   align-items: center;
   margin-left: auto;
   white-space: nowrap;
-  min-width: 0; /* allow nav to shrink on small screens */
+  min-width: 0;
+  /* allow nav to shrink on small screens */
 }
 
 nav#nav-menu a {
@@ -209,7 +218,8 @@ nav#nav-menu .cta {
   height: 44px;
   border-radius: 12px;
   background: #ffffff;
-  border: 2px solid var(--brand-accent);   /* thin gold border */
+  border: 2px solid var(--brand-accent);
+  /* thin gold border */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -220,7 +230,8 @@ nav#nav-menu .cta {
 /* Make the X crisp & perfectly centered */
 .hamburger.active span {
   position: absolute;
-  width: 22px;       /* shorter lines */
+  width: 22px;
+  /* shorter lines */
   height: 3px;
   background: var(--brand-dark);
   border-radius: 2px;
@@ -246,60 +257,164 @@ nav#nav-menu .cta {
 
 
 /* ---------- Mobile menu (top dropdown, not fullscreen) ---------- */
-@media (max-width: 1024px){
-  nav#nav-menu{display:none} /* hide desktop nav */
+@media (max-width: 1024px) {
 
-  .hamburger{display:flex}
-
-  /* Top dropdown (under header) */
-  nav#nav-menu.show{
-    display:flex;
-    flex-direction:column;
-    position:absolute;
-    top: calc(100% + 0px); /* directly under header */
-    left:0;
-    right:0;
-    width:100%;
-    max-height: calc(100vh - 72px); /* leaves room at top */
-    background:var(--brand-dark);
-    color:#fff;
-    padding:18px 20px;
-    overflow:auto;
-    -webkit-overflow-scrolling:touch; /* smooth native touch scrolling */
-    border-bottom-left-radius:14px;
-    border-bottom-right-radius:14px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.12);
-    z-index:1205;
-    transform-origin:top center;
-    animation: slideDown .28s ease-out;
+  /* Hide desktop nav initially */
+  nav#nav-menu {
+    display: none;
+    position: absolute;
+    top: 104%;
+    /* ⭐ EXACTLY BELOW HEADER */
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: var(--brand-dark);
+    color: #fff;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    z-index: 1205;
+    transform-origin: top;
   }
 
-  nav#nav-menu.show a{color:#fff;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:1.05rem}
-  nav#nav-menu.show a.cta{background:var(--brand-accent);color:var(--brand-dark);padding:12px 18px;border-radius:10px;margin-top:8px;display:inline-block}
+  nav#nav-menu.show {
+    display: flex;
+    flex-direction: column;
+    padding: 18px 20px;
 
-  @keyframes slideDown {
-    from{opacity:0; transform:translateY(-8px)}
-    to{opacity:1; transform:translateY(0)}
+    /* NEW animation */
+    animation: menuSlideDown 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  nav#nav-menu.hiding {
+    animation: menuSlideUp 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* Menu links */
+  nav#nav-menu.show a {
+    color: #fff;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 1.05rem;
+  }
+
+  nav#nav-menu.show a.cta {
+    background: var(--brand-accent);
+    color: var(--brand-dark);
+    padding: 12px 18px;
+    border-radius: 10px;
+    margin-top: 8px;
+    display: inline-block;
+  }
+
+  /* Button visible on mobile only */
+  .hamburger {
+    display: flex;
   }
 }
 
 
 
+/* ------- NEW SLIDING MOBILE NAV ------- */
+@keyframes menuSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+    /* slide FROM header bottom */
+  }
 
-/* ---------- Hero ---------- */
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes menuSlideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-30px);
+    /* slide back INTO header */
+  }
+}
+
+
+
+/* ---------- HERO (full-right background image) ---------- */
 .hero {
-  display: flex;
-  gap: 32px;
-  align-items: center;
-  padding: 80px var(--container-pad);
-  max-width: var(--max-width);
-  margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 80px var(--container-pad);
+    max-width: 1600px;
+    margin: 0 auto;
+
+    min-height: 520px;                   /* Make hero big */
+    background-image: url('/images/hero-right-1600.jpg');
+    background-repeat: no-repeat;
+    background-size: 55% auto;           /* Image fills right side */
+    background-position: right center;
+}
+
+/* Soft fade from left (white) → right (image) */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        #ffffff 0%,
+        #ffffff 48%,
+        rgba(255,255,255,0.4) 60%,
+        rgba(255,255,255,0) 100%
+    );
+    z-index: 0;
 }
 
 .hero-left {
-  flex: 1 1 420px;
-  max-width: 850px;
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
 }
+
+
+.hero-left {
+    position: relative;
+    z-index: 2;
+    max-width: 580px;
+}
+
+@media (max-width: 760px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 20px 300px;
+
+        background-size: 120%;
+        background-position: center bottom;
+    }
+
+    .hero::before {
+        background: linear-gradient(
+            to bottom,
+            #ffffff 0%,
+            rgba(255,255,255,0.85) 40%,
+            rgba(255,255,255,0) 100%
+        );
+    }
+
+    .hero-left {
+        max-width: 100%;
+    }
+}
+
+
 
 .hero-left h1 {
   margin: 0 0 10px;
@@ -361,23 +476,32 @@ nav#nav-menu .cta {
 }
 
 @media (max-width: 760px) {
+
   .btn-primary,
   .therapies-btn {
-    width: auto;                /* prevent full-width stretching */
-    padding: 12px 22px;         /* same padding */
-    font-size: 1rem;            /* same text size */
-    border-radius: 12px;        /* identical rounded corners */
+    width: auto;
+    /* prevent full-width stretching */
+    padding: 12px 22px;
+    /* same padding */
+    font-size: 1rem;
+    /* same text size */
+    border-radius: 12px;
+    /* identical rounded corners */
     text-align: center;
     display: inline-block;
-    margin: 6px auto;           /* equal spacing */
+    margin: 6px auto;
+    /* equal spacing */
   }
 
   .hero-btns {
-    justify-content: center;    /* center both buttons evenly */
-    gap: 12px;                  /* consistent spacing */
+    justify-content: center;
+    /* center both buttons evenly */
+    gap: 12px;
+    /* consistent spacing */
     width: 100%;
   }
 }
+
 /* hero image */
 .hero-right {
   flex: 0 0 48%;
@@ -1465,7 +1589,3 @@ nav#nav-menu .cta {
 .cta {
   cursor: pointer;
 }
-
-
-
-
