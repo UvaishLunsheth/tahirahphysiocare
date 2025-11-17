@@ -1422,3 +1422,12 @@ nav#nav-menu .cta {
   display: none;
 }
 
+/* FORCE override focus outline everywhere */
+a:focus,
+button:focus,
+input:focus,
+.menu-close-btn:focus,
+.hamburger:focus {
+  outline: none !important;
+  outline-offset: 0 !important;
+}
