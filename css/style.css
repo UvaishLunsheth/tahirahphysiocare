@@ -179,38 +179,70 @@ nav#nav-menu .cta {
 }
 
 /* ---------- Hamburger (mobile) ---------- */
-.hamburger{
-  display:none;
-  width:38px;height:30px;border:none;background:transparent;padding:0;
-  cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:6px;
-}
-.hamburger span{display:block;width:100%;height:3px;border-radius:2px;background:var(--brand-dark);transition:var(--transition)}
-/* active -> X */
-.hamburger.active span:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
-  background: var(--brand-dark);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
-  background: var(--brand-dark);
+.hamburger {
+  display: none;
+  width: 38px;
+  height: 30px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
 }
 
+/* Hamburger lines */
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background: var(--brand-dark);
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
 
-/* Active hamburger becomes a round close button */
+/* PERFECT CLOSE BUTTON */
 .hamburger.active {
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
   background: #ffffff;
-  border: 2px solid rgba(0,0,0,0.12);
+  border: 2px solid var(--brand-accent);   /* thin gold border */
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
+  position: relative;
 }
+
+/* Make the X crisp & perfectly centered */
+.hamburger.active span {
+  position: absolute;
+  width: 22px;       /* shorter lines */
+  height: 3px;
+  background: var(--brand-dark);
+  border-radius: 2px;
+  transition: 0.25s ease-in-out;
+}
+
+/* Top stroke of the X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+/* Hide middle bar */
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+/* Bottom stroke of the X */
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+
 
 
 /* ---------- Mobile menu (top dropdown, not fullscreen) ---------- */
@@ -251,22 +283,7 @@ nav#nav-menu .cta {
   }
 }
 
-/* Close button inside the mobile dropdown */
-#menuCloseBtn {
-  position: absolute;
-  top: 14px;
-  right: 18px;
-  font-size: 30px;
-  color: white;
-  z-index: 9999;
-}
 
-@media (min-width: 1025px) {
-  /* Desktop close button should not show */
-  #menuCloseBtn {
-    display: none !important;
-  }
-}
 
 
 /* ---------- Hero ---------- */
