@@ -1409,4 +1409,16 @@ nav#nav-menu .cta {
   cursor: pointer;
 }
 
+.menu-close-btn {
+  font-size: 1.7rem;
+  color: #fff;
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  cursor: pointer;
+}
+
+.menu-close-btn.hidden {
+  display: none;
+}
 
