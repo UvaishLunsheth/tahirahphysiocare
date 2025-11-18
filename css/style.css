@@ -575,13 +575,11 @@ nav#nav-menu .cta {
 
 /* Desktop layout */
 .service-hero {
-  display: flex;
-  gap: 32px;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 28px;
   align-items: center;
-  justify-content: space-between;
-  padding: 40px var(--container-pad);
-  max-width: var(--max-width);
-  margin: 0 auto;
+  padding: 34px 20px;
 }
 
 .service-hero-text {
@@ -646,9 +644,9 @@ nav#nav-menu .cta {
 
   /* Stack layout */
   .service-hero {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     text-align: center;
-    padding: 28px var(--container-pad);
+    padding: 20px 20px;
   }
 
   .service-hero-text {
@@ -682,13 +680,10 @@ nav#nav-menu .cta {
     justify-content: center;
   }
 
-  .service-hero-img img {
-    width: 92%;
-    max-width: 360px;
-    height: auto;
-    border-radius: 14px;
-    object-fit: cover;
-    margin: 0 auto !important;
+   .service-hero-img img {
+    max-width: 90%;
+    margin: 0 auto;
+    display: block;
   }
 }
 
