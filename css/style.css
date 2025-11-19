@@ -196,72 +196,9 @@ a {
   from { opacity: 0; transform: translateY(-18px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 /* ============================================================================
-   HERO SECTION – Mobile-first
+   HERO SECTION – DESKTOP VERSION (KEEP EXACTLY SAME)
    ============================================================================ */
-.hero {
-  display: flex;
-  align-items: center;
-  padding: 70px var(--container-pad);
-  background: linear-gradient(to right, #ffffff, #f2fbfe);
-  position: relative;
-  height: 950px;
-}
-
-.hero-left {
-  max-width: 600px;
-  z-index: 2;
-}
-.hero-left h1 {
-  font-size: clamp(1.8rem, 3.8vw, 2.8rem);
-  margin-bottom: 14px;
-  font-weight: 700;
-}
-.tagline {
-  color: var(--brand-aqua);
-  font-weight: 600;
-  margin-bottom: 18px;
-}
-.hero-left p {
-  color: var(--brand-muted);
-  margin-bottom: 24px;
-}
-
-/* Buttons */
-.btn-primary {
-  background: var(--brand-blue);
-  color: #fff;
-  padding: 12px 22px;
-  border-radius: 12px;
-  font-weight: 600;
-  display: inline-block;
-  transition: var(--transition);
-}
-.btn-primary:hover {
-  background: var(--brand-aqua);
-  color: var(--brand-dark);
-}
-
-.btn-outline {
-  border: 2px solid var(--brand-blue);
-  padding: 12px 22px;
-  border-radius: 12px;
-  color: var(--brand-blue);
-  font-weight: 600;
-  display: inline-block;
-}
-.btn-outline:hover {
-  background: var(--brand-blue);
-  color: #fff;
-}
-
-/* ============================================================================
-   HERO SECTION — FINAL PREMIUM VERSION
-   Balanced left/right, filled whitespace, trust panel, highlight strip
-   ============================================================================ */
-
-/* ---------- HERO MAIN CONTAINER ---------- */
 .hero {
   display: flex;
   align-items: center;
@@ -272,7 +209,7 @@ a {
   overflow: hidden;
 }
 
-/* ---------- LEFT SIDE CONTENT ---------- */
+/* Left content */
 .hero-left {
   flex: 1;
   max-width: 640px;
@@ -300,7 +237,7 @@ a {
   max-width: 580px;
 }
 
-/* ---------- NEW HIGHLIGHT STRIP ---------- */
+/* Highlight strip */
 .hero-highlight {
   background: var(--brand-blue);
   color: #fff;
@@ -313,7 +250,7 @@ a {
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-/* ---------- HERO ICONS ROW ---------- */
+/* Icons row */
 .hero-icons-row {
   display: flex;
   flex-wrap: wrap;
@@ -331,17 +268,14 @@ a {
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* ---------- SERVICE AREAS ---------- */
+/* Areas */
 .hero-areas {
   margin-top: 16px;
   font-size: 0.95rem;
   color: var(--brand-muted);
 }
 
-/* ============================================================================
-   HERO IMAGE (RIGHT SIDE) — IMPROVED BALANCE
-   ============================================================================ */
-
+/* Background image (right) */
 .hero::after {
   content: "";
   position: absolute;
@@ -357,7 +291,7 @@ a {
   filter: brightness(0.96) contrast(1.07);
 }
 
-/* Soft gradient to blend text area smoothly */
+/* Blend gradient (left side) */
 .hero::before {
   content: "";
   position: absolute;
@@ -374,10 +308,7 @@ a {
   z-index: 2;
 }
 
-/* ============================================================================
-   TRUST PANEL (RIGHT SIDE BADGES)
-   ============================================================================ */
-
+/* Trust panel */
 .hero-stats {
   position: absolute;
   right: 14%;
@@ -397,154 +328,24 @@ a {
   padding: 12px 0;
   border-bottom: 1px solid rgba(0,0,0,0.07);
 }
-
 .stat-item:last-child {
   border-bottom: none;
 }
-
 .stat-item h3 {
-  margin: 0;
   color: var(--brand-blue);
+  margin: 0;
   font-size: 1.45rem;
   font-weight: 700;
 }
-
 .stat-item p {
   margin: 4px 0 0;
   color: var(--brand-muted);
-  font-size: 0.95rem;
 }
 
-/* ============================================================================
-   MOBILE VERSION — PERFECT STACKING
-   ============================================================================ */
-
-@media (max-width: 760px) {
-
-  .hero {
-    flex-direction: column;
-    padding: 50px 20px 360px;
-    text-align: center;
-    min-height: auto;
-  }
-
-  .hero-left {
-    margin-left: 0;
-  }
-
-  .hero::after {
-    width: 100%;
-    height: 330px;
-    bottom: 0;
-    top: auto;
-    background-position: center bottom;
-  }
-
-  .hero::before {
-    width: 100%;
-    height: 350px;
-    bottom: 0;
-    top: auto;
-    background: linear-gradient(
-      to top,
-      #ffffff 0%,
-      rgba(255,255,255,0.94) 45%,
-      rgba(255,255,255,0) 100%
-    );
-  }
-
-  .hero-highlight {
-    width: 100%;
-  }
-
-  .hero-icons-row {
-    justify-content: center;
-  }
-
-  .hero-stats {
-    position: relative;
-    top: auto;
-    right: auto;
-    transform: none;
-    width: 100%;
-    margin-top: 28px;
-  }
-
-  .stat-item {
-    text-align: center;
-  }
-}
-
-/* ===========================
-   MOBILE FIX — HERO TRUST STATS
-   =========================== */
-@media (max-width: 768px) {
-
-  .hero-stats-row {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    text-align: center;
-    gap: 20px;
-    padding: 25px 10px;
-  }
-
-  .hero-stats-row .hsr-item h3 {
-    font-size: 1.6rem;
-  }
-
-  .hero-stats-row .hsr-item p {
-    font-size: 0.95rem;
-    margin-top: 3px;
-  }
-
-  /* Fix hero feature strip on mobile */
-  .hero-feature-strip {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 32px;
-    text-align: center;
-    padding: 50px 10px;
-  }
-
-  .hero-feature-strip .hf-item {
-    max-width: 280px;
-    margin: auto;
-  }
-
-  .hf-icon {
-    margin: auto;
-  }
-}
-
-/* ===============================
-   TYPEWRITER EFFECT
-   =============================== */
-.hero-typing {
-  margin-top: 12px;
-  font-size: 1rem;
-  color: var(--brand-muted);
-}
-
-.cursor {
-  animation: blink 0.7s infinite;
-  color: var(--brand-blue);
-  font-weight: bold;
-}
-
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-
-/* ===============================
-   HERO STATS ROW (LIGHT STRIP)
-   =============================== */
+/* Hero stats row */
 .hero-stats-row {
   display: flex;
   justify-content: space-around;
-  align-items: center;
   padding: 25px 0;
   background: #eaf3f3;
 }
@@ -555,27 +356,21 @@ a {
   margin: 0;
   font-weight: 700;
 }
-
 .hsr-item p {
   margin: 4px 0 0;
   color: var(--brand-muted);
 }
 
-/* ================================
-   HERO FEATURE STRIP (Final Polished Version)
-   ================================ */
+/* Feature strip */
 .hero-feature-strip {
   background: var(--brand-blue);
-  padding: 60px 0;
+  padding: 60px 6%;
   display: flex;
   justify-content: space-between;
   gap: 60px;
   flex-wrap: wrap;
-  padding-left: 6%;
-  padding-right: 6%;
 }
 
-/* Feature item */
 .hf-item {
   display: flex;
   align-items: flex-start;
@@ -584,14 +379,11 @@ a {
   color: white;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
-
-/* Hover effect (premium subtle scale) */
 .hf-item:hover {
   transform: translateY(-4px);
   opacity: 0.95;
 }
 
-/* Icon box */
 .hf-icon {
   width: 56px;
   height: 56px;
@@ -600,31 +392,123 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.25s ease;
 }
-
-/* Icon hover glow */
 .hf-item:hover .hf-icon {
   background: rgba(255,255,255,0.28);
 }
 
-/* Title */
 .hf-item h4 {
-  margin: 0;
-  margin-bottom: 4px;
+  margin: 0 0 4px;
   font-size: 1.20rem;
   font-weight: 700;
-  transform: translateY(2px); /* mild visual alignment improvement */
 }
-
-/* Description */
 .hf-item p {
-  margin: 0;
-  margin-top: 6px;
+  margin: 6px 0 0;
   color: rgba(255,255,255,0.88);
   line-height: 1.45;
-  font-size: 0.95rem;
 }
+
+/* Cursor typing */
+.hero-typing {
+  margin-top: 12px;
+  color: var(--brand-muted);
+}
+.cursor {
+  animation: blink 0.7s infinite;
+  color: var(--brand-blue);
+  font-weight: bold;
+}
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ============================================================================
+   MOBILE VERSION — FULLY FIXED (UPDATED)
+   ============================================================================ */
+@media (max-width: 760px) {
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 18px 260px;
+    min-height: auto;
+    height: auto;
+  }
+
+  .hero-left {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  /* Fix hero image */
+  .hero::after {
+    width: 100%;
+    height: 320px;
+    bottom: 0;
+    top: auto;
+    background-position: center bottom;
+  }
+
+  /* Fix gradient */
+  .hero::before {
+    width: 100%;
+    height: 320px;
+    bottom: 0;
+    top: auto;
+    background: linear-gradient(
+      to top,
+      #ffffff 0%,
+      rgba(255,255,255,0.95) 50%,
+      rgba(255,255,255,0) 100%
+    );
+  }
+
+  /* Trust panel */
+  .hero-stats {
+    position: relative;
+    transform: none;
+    top: auto;
+    right: auto;
+    width: 100%;
+    margin-top: 26px;
+  }
+  .stat-item {
+    text-align: center;
+  }
+
+  /* Icons row */
+  .hero-icons-row {
+    justify-content: center;
+  }
+
+  /* Stats row */
+  .hero-stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    padding: 30px 12px;
+    text-align: center;
+  }
+
+  /* Feature strip */
+  .hero-feature-strip {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .hero-feature-strip .hf-item {
+    margin: auto;
+    max-width: 260px;
+  }
+  .hf-icon {
+    margin: auto;
+  }
+}
+
 
 
 
