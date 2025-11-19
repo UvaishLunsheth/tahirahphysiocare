@@ -1,301 +1,621 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tahirah PhysioCare | Best Physiotherapy in Bharuch</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tahirah PhysioCare — Home Physiotherapy in Bharuch, Vadodara & Surat</title>
+
   <meta name="description"
-    content="Professional physiotherapy in Bharuch — back pain treatment, sports injury rehab, fracture recovery, stroke care and post-operative physiotherapy. Move Freely. Heal Naturally." />
+    content="Tahirah PhysioCare offers evidence-based home physiotherapy in Bharuch, Vadodara and Surat — back pain, knee rehab, post-surgery recovery, stroke care and elderly mobility programs." />
   <meta name="keywords"
-    content="physiotherapy Bharuch, physiotherapist Bharuch, back pain treatment, sports injury rehabilitation, fracture recovery, stroke physiotherapy" />
+    content="physiotherapist bharuch, home physiotherapy vadodara, physio near me surat, back pain physio, knee rehab, stroke rehab at home" />
   <link rel="canonical" href="https://tahirahphysiotherapy.com/" />
   <meta name="robots" content="index,follow" />
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="Tahirah PhysioCare" />
-  <meta property="og:title" content="Best Physiotherapy in Bharuch | Tahirah PhysioCare" />
+  <meta property="og:title" content="Tahirah PhysioCare — Home Physiotherapy in Bharuch" />
   <meta property="og:description"
-    content="Expert physiotherapy for pain relief, injury recovery, fracture rehabilitation, stroke care & sports injuries." />
+    content="Evidence-based home physiotherapy for pain relief, injury recovery, post-op rehab and neurological care across Bharuch, Vadodara & Surat." />
   <meta property="og:image" content="https://tahirahphysiotherapy.com/images/og-image-1200x630.webp" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tahirahphysiotherapy.com/" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Preloads + fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fonts & CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="preload" href="/css/style.css" as="style" onload="this.rel='stylesheet'">
   <noscript>
     <link rel="stylesheet" href="/css/style.css">
   </noscript>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- LCP image -->
+  <!-- Preload LCP image -->
   <link rel="preload" as="image" href="/images/hero-right-1600.webp" type="image/webp">
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- Minimal in-head styles required for the new sections (rest in /css/style.css) -->
-  <style>
-    /* Small helpers for the "Our Approach" cards to match your theme */
-    .approach-grid {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 28px;
-    }
-
-    .approach-card {
-      flex: 1 1 300px;
-      background: var(--white);
-      padding: 26px;
-      border-radius: 16px;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
-    }
-
-    .therapies-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 28px;
-    }
-
-    .therapy-list-card {
-      background: var(--white);
-      padding: 18px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
-    }
-
-    .therapy-list-card img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-
-    .hero-cta-row {
-      margin-top: 18px;
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .btn-outline.therapies-btn {
-      border: 2px solid var(--brand-dark);
-      background: transparent;
-      padding: 10px 18px;
-      border-radius: 10px;
-      color: var(--brand-dark);
-    }
-  </style>
-
-  <!-- Structured data: small business + basic breadcrumbs (keeps homepage lean) -->
+  <!-- Minimal structured data -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"MedicalBusiness",
-    "name":"Tahirah PhysioCare",
-    "url":"https://tahirahphysiotherapy.com/",
-    "telephone":"+91 78747 39574",
-    "address":[
-      {"@type":"PostalAddress","streetAddress":"Beside Munaf's Bungalows","addressLocality":"Bharuch","postalCode":"392230","addressRegion":"Gujarat","addressCountry":"IN"},
-      {"@type":"PostalAddress","streetAddress":"Ajay-Vijay Complex","addressLocality":"Bharuch","postalCode":"392035","addressRegion":"Gujarat","addressCountry":"IN"}
-    ]
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Tahirah PhysioCare",
+    "url": "https://tahirahphysiotherapy.com/",
+    "telephone": "+91 78747 39574",
+    "image": "https://tahirahphysiotherapy.com/images/og-image-1200x630.webp",
+    "areaServed": ["Bharuch","Vadodara","Surat"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Beside Munaf's Bungalows, Ajay-Vijay Complex",
+      "addressLocality": "Bharuch",
+      "postalCode": "392230",
+      "addressRegion": "Gujarat",
+      "addressCountry": "IN"
+    }
   }
   </script>
+
+  <style>
+    /* tiny safety CSS to avoid FOIT until stylesheet loads */
+    :root {
+      --brand-blue: #005B82;
+      --brand-aqua: #3DC4A1
+    }
+
+    body {
+      visibility: visible;
+    }
+  </style>
 </head>
 
 <body>
-  <!-- header -->
+  <!-- Header (global snippet) -->
   <header class="header" role="banner">
-    <div class="logo-container">
+    <div class="logo-container container">
       <a href="/" aria-label="Tahirah PhysioCare home">
         <picture>
-          <source srcset="/images/logo-800.webp" type="image/webp"><img src="/images/logo-800.webp"
-            alt="Tahirah PhysioCare logo" width="55" loading="lazy">
+          <source srcset="/images/logo-800.webp" type="image/webp">
+          <img src="/images/logo-800.webp" alt="Tahirah PhysioCare logo" width="125" loading="lazy">
         </picture>
       </a>
       <p class="brand-title">Tahirah <span>PhysioCare</span></p>
+
+      <!-- desktop nav -->
+      <nav id="nav-menu" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/about/">About Us</a>
+        <a href="/therapies/">Therapies</a>
+        <a href="/services/">Services</a>
+        <a href="/gallery/">Gallery</a>
+        <a href="/contact/">Contact</a>
+        <a href="/book-appointment/" class="cta">Book Now</a>
+      </nav>
+
+      <!-- hamburger (mobile) -->
+      <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-
-    <nav id="nav-menu">
-      <a href="/">Home</a>
-      <a href="/therapies/" class="active">Therapies</a>
-      <a href="/services/">Services</a>
-      <a href="/gallery/">Gallery</a>
-      <a href="/contact/">Contact</a>
-      <a href="/book-appointment/" class="cta">Book Now</a>
-    </nav>
-
-    <button id="hamburger" class="hamburger" aria-label="Open menu"
-      aria-expanded="false"><span></span><span></span><span></span></button>
-
-
   </header>
 
-  <main>
-    <!-- hero -->
-    <section class="hero" aria-label="Hero">
+  <main id="maincontent">
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero — Tahirah PhysioCare">
       <div class="hero-left">
-        <h1>Professional Physiotherapy for Your Recovery</h1>
+
+        <h1>Professional physiotherapy delivered to your home</h1>
         <p class="tagline">Move Freely. Heal Naturally.</p>
 
-        <p style="color:var(--muted);max-width:620px;">
-          Evidence-based physiotherapy in Bharuch for back pain, sports injuries, fracture recovery, post-operative
-          rehabilitation and neurological care. Two clinic locations — Ikhar & Sarbhan.
+        <p class="hero-desc">
+          Dr. Zakria Lunsheht (B.P.T) is a qualified physiotherapist providing personalised home-based care with a
+          strong
+          clinical focus. He specialises in pain relief, post-surgery rehabilitation, neurological recovery, elderly
+          mobility
+          training and long-term functional improvement—bringing safe, evidence-based physiotherapy directly to your
+          home.
         </p>
 
-        <div class="hero-cta-row">
-          <a href="/services/" class="btn-primary">View Services</a>
-          <!-- OUTLINE button linking to the therapies hub -->
-          <a href="/therapies/" class="therapies-btn">Therapies We Offer</a>
 
+        <!-- Buttons -->
+        <div class="hero-btns">
+          <a href="/services/" class="btn-primary">View Services</a>
+          <a href="/therapies/" class="btn-outline">Therapies We Offer</a>
+        </div>
+
+        <!-- Icons Row -->
+        <div class="hero-icons-row">
+          <div class="hi-item">🚑 Same-Day Appointment</div>
+          <div class="hi-item">👨‍⚕️ Certified Expert</div>
+          <div class="hi-item">🏠 Home Visit Available</div>
+          <div class="hi-item">💬 WhatsApp Support</div>
+        </div>
+
+        <!-- Typing Location -->
+        <p class="hero-typing">
+          Serving: <span id="typewriter"></span>
+        </p>
+
+      </div>
+
+      <!-- TRUST PANEL -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <h3>10,000+</h3>
+          <p>Patients Treated</p>
+        </div>
+
+        <div class="stat-item">
+          <h3>7+ Years</h3>
+          <p>Experience</p>
+        </div>
+
+        <div class="stat-item">
+          <h3>4.9★</h3>
+          <p>Rating</p>
+        </div>
+
+        <div class="stat-item">
+          <h3>Certified</h3>
+          <p>Physiotherapist</p>
         </div>
       </div>
 
-     >
     </section>
 
-    <!-- Treatments (unchanged section) -->
+    <!-- ===============================
+     HERO HIGHLIGHTS (Light Stats Row)
+     =============================== -->
+    <section class="hero-stats-row">
+      <div class="hsr-item">
+        <h3 data-count="24">24</h3>
+        <p>Home Visits</p>
+      </div>
+
+      <div class="hsr-item">
+        <h3 data-count="7">4+</h3>
+        <p>Experience</p>
+      </div>
+
+      <div class="hsr-item">
+        <h3>500+</h3>
+        <p>Patients Treated</p>
+      </div>
+
+      <div class="hsr-item">
+        <h3>4.9★</h3>
+        <p>Patient Rating</p>
+      </div>
+    </section>
+
+
+    <section class="hero-feature-strip">
+
+      <div class="hf-item">
+        <div class="hf-icon">
+          <!-- Therapist Icon -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 
+        1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 
+        4v2h16v-2c0-2.66-5.33-4-8-4z" stroke="white" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+        <h4>Expert Therapist</h4>
+        <p>Qualified BPT physiotherapist with extensive clinical experience.</p>
+      </div>
+
+      <div class="hf-item">
+        <div class="hf-icon">
+          <!-- Home Visit Icon -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+            <path d="M3 12l9-9 9 9" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9 21V12h6v9" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <h4>Home Visit Available</h4>
+        <p>Convenient home physiotherapy services at your doorstep.</p>
+      </div>
+
+      <div class="hf-item">
+        <div class="hf-icon">
+          <!-- Care Icon -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+            <path d="M12 21s-6-3.33-9-8a5.4 5.4 0 1 1 9-6 5.4 5.4 0 1 1 9 
+        6c-3 4.67-9 8-9 8z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <h4>Comprehensive Care</h4>
+        <p>Complete range of physiotherapy and rehabilitation treatments.</p>
+      </div>
+
+    </section>
+
+    <!-- ===============================
+     HOMEPAGE ABOUT SECTION
+     =============================== -->
+    <!-- ===============================
+     HOMEPAGE ABOUT SECTION (with animations)
+     =============================== -->
+    <section class="home-about-section fade-up">
+      <div class="ha-container">
+
+        <div class="ha-left fade-right">
+          <img src="/images/physio-profile.jpg" alt="Dr. Zakria Lunsheht Physiotherapist" class="ha-photo">
+        </div>
+
+        <div class="ha-right fade-left">
+          <div class="about-badge">About Us</div>
+
+          <h2>Dr. Zakria Lunsheht (B.P.T)</h2>
+
+          <p>
+            Dr. Zakria Lunsheht is a qualified physiotherapist dedicated to helping patients recover safely and regain
+            confident movement. With expertise in pain management, post-surgery rehabilitation, neurological recovery
+            and
+            elderly mobility, he provides personalised home-based physiotherapy rooted in clinical assessment and
+            evidence-based treatment.
+          </p>
+
+          <p>
+            Known for his calm approach, accurate diagnosis and commitment to long-term results, Dr. Zakria focuses on
+            restoring functional strength and improving daily quality of life for each patient.
+          </p>
+
+          <a href="/about/" class="km-btn">
+            Know More
+            <span class="km-icon">
+              <svg class="arrow-svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="white" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </a>
+
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Treatments grid -->
     <section class="treatments" aria-labelledby="treatment-heading">
       <h2 id="treatment-heading" class="section-title">Our Physiotherapy Treatments</h2>
-      <div class="treatment-grid">
-        <!-- keep your existing treatment cards -->
-        <a class="treatment-card" href="/services/back-pain-management/">
-          <img src="/images/back_pain-800.jpg" alt="Back Pain Treatment Bharuch">
-          <p>Back Pain Management</p>
+      <div class="treatment-grid container" role="list">
+        <a class="treatment-card" href="/services/back-pain-management/" role="listitem"
+          aria-label="Back Pain Management">
+          <picture>
+            <source srcset="/images/back_pain-800.webp" type="image/webp"><img src="/images/back_pain-800.jpg"
+              alt="Back Pain Treatment Bharuch">
+          </picture>
+          <p>Back & Neck Pain Management</p>
         </a>
-        <a class="treatment-card" href="/services/post-operative-care/">
-          <img src="/images/post_op-800.jpg" alt="Post Operative Physio Bharuch">
-          <p>Post-Operative Care</p>
+
+        <a class="treatment-card" href="/services/joint-knee-rehab/" role="listitem"
+          aria-label="Joint & Knee Rehabilitation">
+          <picture>
+            <source srcset="/images/post_op-800.webp" type="image/webp"><img src="/images/post_op-800.jpg"
+              alt="Joint & Knee Rehab">
+          </picture>
+          <p>Joint & Knee Rehabilitation</p>
         </a>
-        <a class="treatment-card" href="/services/sports-injury-rehab/">
-          <img src="/images/sports_injury-800.jpg" alt="Sports Injury Rehab Bharuch">
-          <p>Sports Injury Rehab</p>
+
+        <a class="treatment-card" href="/services/post-surgery-physiotherapy/" role="listitem"
+          aria-label="Post Surgery Physiotherapy">
+          <picture>
+            <source srcset="/images/post_op-1200.webp" type="image/webp"><img src="/images/post_op-1200.jpg"
+              alt="Post Surgery Physiotherapy">
+          </picture>
+          <p>Post-Surgery Physiotherapy</p>
         </a>
-        <a class="treatment-card" href="/services/fracture-rehabilitation/">
-          <img src="/images/fracture_rehab-800.jpg" alt="Fracture Rehabilitation Bharuch">
+
+        <a class="treatment-card" href="/services/sports-injury-rehab/" role="listitem"
+          aria-label="Sports Injury Rehab">
+          <picture>
+            <source srcset="/images/sports_injury-800.webp" type="image/webp"><img src="/images/sports_injury-800.jpg"
+              alt="Sports Injury Rehab">
+          </picture>
+          <p>Sports Injury Rehabilitation</p>
+        </a>
+
+        <a class="treatment-card" href="/services/fracture-rehabilitation/" role="listitem"
+          aria-label="Fracture Rehabilitation">
+          <picture>
+            <source srcset="/images/fracture_rehab-800.webp" type="image/webp"><img src="/images/fracture_rehab-800.jpg"
+              alt="Fracture Rehabilitation">
+          </picture>
           <p>Fracture Rehabilitation</p>
         </a>
-        <a class="treatment-card" href="/services/paralysis-stroke-care/">
-          <img src="/images/paralysis_care-800.jpg" alt="Stroke Paralysis Rehab Bharuch">
-          <p>Paralysis & Stroke Care</p>
+
+        <a class="treatment-card" href="/services/paralysis-stroke-care/" role="listitem"
+          aria-label="Paralysis and Stroke Care">
+          <picture>
+            <source srcset="/images/paralysis_care-800.webp" type="image/webp"><img src="/images/paralysis_care-800.jpg"
+              alt="Paralysis & Stroke Care">
+          </picture>
+          <p>Stroke & Neuro Physiotherapy</p>
         </a>
       </div>
     </section>
 
-    <!-- OUR TREATMENT APPROACH (new, SEO-friendly) -->
-    <section id="our-approach" style="padding:68px var(--container-pad); background:var(--BG-soft);">
-      <h2 class="section-title">Our Treatment Approach</h2>
 
-      <p style="max-width:900px; margin:0 auto; text-align:center; color:var(--muted);">
-        At Tahirah PhysioCare we combine clinical assessment, evidence-based manual techniques, targeted exercises and
-        modern modalities to deliver safe, measurable and long-lasting recovery. Our goal-oriented programs are tailored
-        to your condition, lifestyle and recovery pace.
-      </p>
 
-      <div class="approach-grid" role="list">
-        <div class="approach-card" role="listitem">
-          <h3>Detailed Clinical Assessment</h3>
-          <p style="color:var(--muted)">Posture & movement analysis, pain source identification and functional testing
-            form the basis of every treatment plan.</p>
+    <!-- Our Approach -->
+<section id="our-approach" class="approach-section" aria-labelledby="approach-heading">
+  <div class="container">
+
+    <div class="approach-tag fade-up">Our Approach</div>
+
+    <h2 id="approach-heading" class="section-title fade-up">
+      Our Treatment Approach
+    </h2>
+
+    <p class="approach-desc fade-up">
+      We combine clinical assessment, manual therapy, therapeutic exercises, and modern modalities to build
+      personalised, goal-oriented programs that restore function and prevent recurrence.
+    </p>
+
+    <!-- GRID -->
+    <div class="approach-grid">
+
+      <!-- CARD 1 -->
+      <div class="approach-card fade-up">
+        <div class="icon-wrap">
+          <!-- Assessment icon -->
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#005B82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 2h6v4H9z"/>
+            <path d="M5 8h14v13H5z"/>
+            <path d="M9 14l2 2 4-4"/>
+          </svg>
         </div>
-
-        <div class="approach-card" role="listitem">
-          <h3>Root-Cause Treatment</h3>
-          <p style="color:var(--muted)">We address the underlying mechanical, muscular or neurological cause rather than
-            only treating symptoms.</p>
-        </div>
-
-        <div class="approach-card" role="listitem">
-          <h3>Personalised Programs</h3>
-          <p style="color:var(--muted)">Individual plans combining manual therapy, therapeutic exercise, electrotherapy
-            and home programs for sustainable results.</p>
-        </div>
-
-        <div class="approach-card" role="listitem">
-          <h3>Progressive Rehabilitation</h3>
-          <p style="color:var(--muted)">We scale exercises for strength, balance and sport-specific return-to-activity
-            when you’re ready.</p>
-        </div>
-
-        <div class="approach-card" role="listitem">
-          <h3>Long-Term Prevention</h3>
-          <p style="color:var(--muted)">Education, ergonomics and routine strengthening to reduce recurrence and improve
-            long-term function.</p>
-        </div>
+        <h3>Detailed Clinical Assessment</h3>
+        <p>Posture & movement analysis, pain-source identification and functional testing inform each plan.</p>
       </div>
 
-      <div style="text-align:center; margin-top:26px;">
-        <a href="/therapies/" class="btn-primary">Explore All Therapies</a>
+      <!-- CARD 2 -->
+      <div class="approach-card fade-up">
+        <div class="icon-wrap">
+          <!-- Root-cause icon -->
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#005B82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 11l5-5 5 5"/>
+            <path d="M12 6v12"/>
+          </svg>
+        </div>
+        <h3>Root-Cause Treatment</h3>
+        <p>We treat mechanical and neurological causes — not just symptoms.</p>
       </div>
-    </section>
 
-    <!-- TESTIMONIALS -->
+      <!-- CARD 3 -->
+      <div class="approach-card fade-up">
+        <div class="icon-wrap">
+          <!-- Exercise icon -->
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#005B82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="9" width="4" height="6"/>
+            <rect x="18" y="9" width="4" height="6"/>
+            <line x1="6" y1="12" x2="18" y2="12"/>
+          </svg>
+        </div>
+        <h3>Personalised Programs</h3>
+        <p>Manual therapy, exercises, and home plans tailored to your needs.</p>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="approach-card fade-up">
+        <div class="icon-wrap">
+          <!-- Recovery icon -->
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#005B82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 6v6l4 2"/>
+            <circle cx="12" cy="12" r="10"/>
+          </svg>
+        </div>
+        <h3>Progressive Rehabilitation</h3>
+        <p>We scale exercises for strength, balance and safe return to activity.</p>
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:20px;">
+      <a class="btn-primary" href="/therapies/">Explore All Therapies</a>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Testimonials -->
     <section class="testimonials-slider" aria-labelledby="testimonials-heading">
       <h2 id="testimonials-heading" class="section-title">What Our Patients Say</h2>
-      <div class="slider-container" aria-live="polite">
-        <div class="slider-track">
-          <div class="slide">
-            <blockquote class="quote">“My chronic back pain reduced drastically within a few sessions!”</blockquote>
-            <cite>— Ayesha K.</cite>
+      <div class="container" style="max-width:980px;">
+        <div class="slider-container" aria-live="polite">
+          <div class="slider-track" role="list">
+            <div class="slide" role="listitem">
+              <blockquote class="quote">“My chronic back pain reduced drastically within a few sessions. The therapist
+                explained everything clearly and the home program helped a lot.”</blockquote>
+              <cite>— Ayesha K., Bharuch</cite>
+            </div>
+
+            <div class="slide" role="listitem">
+              <blockquote class="quote">“Very professional and compassionate. My knee pain improved after guided
+                exercises and gait retraining.”</blockquote>
+              <cite>— Harsh P., Vadodara</cite>
+            </div>
+
+            <div class="slide" role="listitem">
+              <blockquote class="quote">“Post-op recovery felt smooth — step-by-step progress and clear follow-up care.”
+              </blockquote>
+              <cite>— Mehul R., Surat</cite>
+            </div>
           </div>
-          <div class="slide">
-            <blockquote class="quote">“Very professional physiotherapist. My knee pain is almost gone.”</blockquote>
-            <cite>— Harsh P.</cite>
+        </div>
+        <div class="slider-dots" aria-hidden="true" style="text-align:center; margin-top:12px;"></div>
+      </div>
+    </section>
+
+    <!-- Quick Help / Booking -->
+    <section class="contact-section" aria-labelledby="contact-heading" style="padding:40px 0;">
+      <div class="container">
+        <h2 id="contact-heading" class="section-title">Need help now? Book a home visit</h2>
+        <p style="text-align:center; color:var(--brand-muted); max-width:720px; margin:0 auto 18px;">
+          Book via WhatsApp or call us. Typical appointments arranged within 24–48 hours for Bharuch, Vadodara & Surat.
+        </p>
+
+        <div class="contact-grid" role="region" aria-label="Quick contact options">
+          <div class="contact-card">
+            <h3>Quick Booking</h3>
+            <p style="color:var(--brand-muted)">Share your name, area and concern on WhatsApp and our coordinator will
+              confirm a slot.</p>
+            <div class="btn-row">
+              <a class="btn-whatsapp" href="https://wa.me/917874739574">Chat on WhatsApp</a>
+              <a class="btn-call" href="tel:+917874739574">Call Now</a>
+            </div>
           </div>
-          <div class="slide">
-            <blockquote class="quote">“My post-operation recovery was quick and smooth.”</blockquote><cite>— Mehul
-              R.</cite>
+
+          <div class="contact-card">
+            <h3>Clinic Locations</h3>
+            <div class="clinic-locations" style="display:grid; gap:12px;">
+              <div class="clinic-box">
+                <strong>Ikhar Clinic</strong>
+                <p style="color:var(--brand-muted); margin:6px 0 0;">Beside Munaf's Bungalows, Bharuch</p>
+                <a class="direction-btn" href="https://www.google.com/maps" target="_blank"
+                  rel="noopener">Directions</a>
+              </div>
+              <div class="clinic-box">
+                <strong>Sarbhan Clinic</strong>
+                <p style="color:var(--brand-muted); margin:6px 0 0;">Ajay-Vijay Complex, Bharuch</p>
+                <a class="direction-btn" href="https://www.google.com/maps" target="_blank"
+                  rel="noopener">Directions</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="slider-dots" aria-hidden="true"></div>
     </section>
 
+    <!-- FAQ (short preview - link to full FAQ page) -->
+    <section class="faq-section" aria-labelledby="faq-heading" style="padding:40px 0;">
+      <div class="container">
+        <h2 id="faq-heading" class="section-title">Frequently Asked Questions</h2>
+
+        <div class="faq-container" style="max-width:900px; margin:0 auto;">
+          <div class="faq-item">
+            <div class="faq-question">Do you treat elderly patients?</div>
+            <div class="faq-answer">
+              <p style="color:var(--brand-muted);">Yes — we offer specialist elderly mobility, fall-prevention and
+                home-safety assessment services.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">How long is a session?</div>
+            <div class="faq-answer">
+              <p style="color:var(--brand-muted);">Sessions are typically 45–60 minutes depending on assessment and
+                treatment needs.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Which areas do you cover?</div>
+            <div class="faq-answer">
+              <p style="color:var(--brand-muted);">We serve Bharuch District, Vadodara and Surat with both home visits
+                and clinic appointments.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:18px;">
+          <a class="btn-outline" href="/faq/">View Full FAQ</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- floating dual widget (keeps same widget across site) -->
-  <div class="contact-widget" role="region" aria-label="Contact quick actions">
+  <!-- Footer & floating widget (global snippet) -->
+  <footer role="contentinfo" aria-label="Site footer">
+    <div class="container" style="padding-top:18px; padding-bottom:18px;">
+      <picture>
+        <source srcset="/images/logo-800.webp" type="image/webp">
+        <img src="/images/logo-800.webp" alt="Tahirah PhysioCare logo" width="70" loading="lazy">
+      </picture>
+
+      <p style="margin-top:12px; font-weight:600;">Move Freely. Heal Naturally.</p>
+
+      <p style="margin-top:6px;">
+        📞 <a href="tel:+917874739574">+91 78747 39574</a>
+        &nbsp; | &nbsp;
+        ✉️ <a href="mailto:info@tahirahphysiotherapy.com">info@tahirahphysiotherapy.com</a>
+      </p>
+
+      <p style="margin-top:10px; font-size:0.95rem; color:rgba(255,255,255,0.9);">
+        © <span id="copy-year">2025</span> Tahirah PhysioCare
+      </p>
+    </div>
+  </footer>
+
+  <!-- Floating contact widget (global) -->
+  <div class="contact-widget" role="region" aria-label="Quick contact">
     <a class="cw-btn" href="tel:+917874739574" aria-label="Call Tahirah PhysioCare">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path
+        <path fill="#fff"
           d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 01.9-.27c1 .2 2 .3 3 .3a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 21.5 2.5 13.93 2.5 4a1 1 0 011-1H7a1 1 0 011 1c0 1 .1 2 .3 3a1 1 0 01-.27.9l-2.2 2.19z" />
       </svg>
     </a>
 
     <a class="cw-btn" href="https://wa.me/917874739574" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path
+        <path fill="#fff"
           d="M20.52 3.48A11.87 11.87 0 0012 0C5.37 0 .03 5.34.03 12.03a11.85 11.85 0 001.63 5.9L0 24l6.36-1.66a11.93 11.93 0 005.64 1.44c6.63 0 11.97-5.35 11.97-12.03 0-3.2-1.25-6.2-3.45-8.11zM12 21.6a9.4 9.4 0 01-4.8-1.32l-.34-.2L4 20l1.3-2.78-.22-.36A9.4 9.4 0 012.6 12.07 9.4 9.4 0 1112 21.6zm5.02-7.93c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.62.14s-.71.88-.87 1.07c-.16.18-.32.21-.59.07-.27-.13-1.14-.42-2.17-1.33-.8-.71-1.34-1.58-1.5-1.84-.16-.26-.02-.4.12-.54.12-.12.27-.32.4-.48.13-.16.17-.27.27-.45.09-.18.05-.34-.02-.47-.07-.13-.62-1.5-.85-2.06-.22-.53-.45-.46-.62-.47l-.53-.01c-.18 0-.47.07-.72.34-.25.27-.96.94-.96 2.3 0 1.37.99 2.69 1.12 2.88.13.18 1.94 3.02 4.7 4.23 2.77 1.22 2.77.81 3.27.76.5-.05 1.6-.64 1.82-1.26.22-.63.22-1.17.15-1.28-.07-.12-.25-.18-.53-.32z" />
       </svg>
     </a>
   </div>
 
-  <!-- footer -->
-  <footer role="contentinfo">
-    <picture>
-      <source srcset="/images/logo-800.webp" type="image/webp"><img src="/images/logo-800.webp"
-        alt="Tahirah PhysioCare logo" width="85" loading="lazy">
-    </picture>
-    <p>Move Freely. Heal Naturally.</p>
-    <p>📞 <a href="tel:+917874739574">+91 78747 39574</a> | ✉️ <a
-        href="mailto:info@tahirahphysiotherapy.com">info@tahirahphysiotherapy.com</a></p>
-    <p>© <span id="copy-year">2025</span> Tahirah PhysioCare</p>
-  </footer>
-
+  <!-- Scripts -->
   <script src="/js/main.js" defer></script>
   <script>document.getElementById('copy-year').textContent = new Date().getFullYear();</script>
+ 
+  <script>
+gsap.registerPlugin(ScrollTrigger);
+
+// Fade Up
+gsap.utils.toArray(".fade-up").forEach(item => {
+  gsap.from(item, {
+    opacity: 0,
+    y: 40,
+    duration: 0.8,
+    scrollTrigger: {
+      trigger: item,
+      start: "top 85%"
+    }
+  });
+});
+
+// Fade Left
+gsap.utils.toArray(".fade-left").forEach(item => {
+  gsap.from(item, {
+    opacity: 0,
+    x: -40,
+    duration: 0.8,
+    scrollTrigger: {
+      trigger: item,
+      start: "top 85%"
+    }
+  });
+});
+
+// Fade Right
+gsap.utils.toArray(".fade-right").forEach(item => {
+  gsap.from(item, {
+    opacity: 0,
+    x: 40,
+    duration: 0.8,
+    scrollTrigger: {
+      trigger: item,
+      start: "top 85%"
+    }
+  });
+});
+</script>
+
+
 </body>
 
 </html>
